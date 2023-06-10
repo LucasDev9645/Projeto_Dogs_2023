@@ -15,14 +15,16 @@ const Login = () => {
 
   if (login === true) return <Navigate to="/conta" />;
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="criar" element={<LoginCreate />} />
-        <Route path="perdeu" element={<LoginPasswordLost />} />
-        <Route path="resetar" element={<LoginPasswordReset />} />
-      </Routes>
-    </div>
+    <section className="containerLogin">
+      <div className="forms">
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="criar" element={<LoginCreate />} />
+          <Route path="perdeu" element={<LoginPasswordLost />} />
+          <Route path="resetar" element={<LoginPasswordReset />} />
+        </Routes>
+      </div>
+    </section>
   );
 };
 
