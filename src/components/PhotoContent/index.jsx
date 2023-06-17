@@ -7,15 +7,15 @@ import "./styles.css";
 const PhotoContent = ({ data }) => {
   const { photo, comments } = data;
   return (
-    <div className="photo">
-      <div className="img">
+    <div className="photoContent">
+      <div className="imgContent">
         <img src={photo.src} alt={photo.title} />
       </div>
       <div className="details">
         <div>
-          <p>
+          <p className="authorContents">
             <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
-            <span className="visualizacao">{photo.acessos}</span>
+            <span className="visualizacoesContent">{photo.acessos}</span>
           </p>
           <h1 className="title">
             <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
