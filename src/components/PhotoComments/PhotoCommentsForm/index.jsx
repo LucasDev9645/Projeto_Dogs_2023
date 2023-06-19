@@ -5,6 +5,8 @@ import useFetch from "../../../Hooks/useFetch";
 import Error from "../../../Help/Error";
 import { COMMENT_POST } from "../../../util/api";
 
+import "./styles.css";
+
 const PhotoCommentsForm = ({ id, setComments }) => {
   const { request, error } = useFetch();
   const [comment, setComment] = useState();
@@ -18,15 +20,16 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="formComment" onSubmit={handleSubmit}>
       <textarea
+        className="textarea"
         name="comment"
         id="comment"
         placeholder="Comentar..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />
-      <button>
+      <button className="formCommentButton">
         <Enviar />
       </button>
       <Error error={error} />
