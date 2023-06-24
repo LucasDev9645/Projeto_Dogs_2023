@@ -8,12 +8,12 @@ import Image from "../../Help/Imager";
 
 import "./styles.css";
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <div className="photoContent">
+    <div className={`photoContent ${single ? "single" : ""}`}>
       <div className="imgContent">
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -37,7 +37,9 @@ const PhotoContent = ({ data }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      {!single && (
+        <PhotoComments single={single} id={photo.id} comments={comments} />
+      )}
     </div>
   );
 };
