@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { UserContext } from "../../../UserContext";
 
+import Head from "../../../Help/Head";
 import Input from "../../Reusable/Input";
 import Button from "../../Reusable/Button";
 import Error from "../../../Help/Error";
@@ -25,6 +26,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className="form" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

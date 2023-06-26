@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Head from "../../../Help/Head";
 import Input from "../../Reusable/Input";
 import Button from "../../Reusable/Button";
 import Error from "../../../Help/Error";
@@ -39,6 +40,7 @@ const LoginPasswordReset = () => {
 
   return (
     <div>
+      <Head title="Resete a Senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input
