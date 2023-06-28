@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
-import UserStatsGraphs from "../UserStatsGraphs";
+const UserStatsGraphs = React.lazy(() => import("../UserStatsGraphs"));
 import Head from "../../../Help/Head";
 import useFetch from "../../../Hooks/useFetch";
 import { STATS_GET } from "../../../util/api";
@@ -24,10 +24,10 @@ const UserStats = () => {
   if (error) return <Error error={error} />;
   if (data)
     return (
-      <div>
+      <React.Suspense fallback={<div></div>}>
         <Head title="Estatísticas" />
         <UserStatsGraphs data={data} />
-      </div>
+      </React.Suspense>
     );
   else return null;
 };
